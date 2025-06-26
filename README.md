@@ -19,13 +19,14 @@ This Power BI report provides a detailed exploratory analysis of a global IT com
 
 | Column Name             | Description                                      |
 |-------------------------|--------------------------------------------------|
-| Platform                | Social media platform (TikTok, LinkedIn, etc.)   |
+| Post_ID                | Unique ID for all posts   |
+| Platform                | Social media platform (TikTok, LinkedIn, YouTube etc.)   |
 | Content_Type            | Organic or Promoted                              |
-| Content_Category        | Product Promo, Educational, Entertainment        |
-| Post_Type               | Video, Carousel, Text                            |
+| Content_Category        | Product Promotion, Customer Story, Event/Webinar, Educational, Entertainment        |
+| Post_Type               | Video, Carousel, Text, Article, Live Stream, PDF, Image,          |
 | Region, Latitude, Longitude | Geographic info                                |
 | Post_Published_At, Hour, Day | Publishing timestamp                         |
-| Engagement, Views, CTR, Impressions, Clicks | Performance metrics           |
+| Engagement, Views, Likes, Shares, CTR, Impressions, Clicks | Performance metrics           |
 | Main_Hashtag            | Primary hashtag used                             |
 
 ---
@@ -47,10 +48,13 @@ This Power BI report provides a detailed exploratory analysis of a global IT com
 - Platform → Day of Week → Hour
 
 #### 📈 Insights:
+- Youtube recorded the highest engagement across various content category, the least was linkedIn
 - TikTok had the highest engagement rate, especially for short-form videos.
 - Educational content performed better on LinkedIn and X.com.
-- Carousels generated more engagement on Instagram than videos.
-- Lower engagement was observed during off-peak hours (12 am–6 am).
+- Carousels generated more engagement on LinkedIn followed by instagram, no engagement for other platform.
+- Images generated more engagement on instagram and linkedIn, least on Youtube
+- Video generated more engagement on Tiktok followed closely by YouTube & instagram, least is LinkedIn
+- Live streams had more engagement on instagram followed closely by facebook, the least is LinkedIn no engaagement on X.com. X.com generated the highest engagement for text.
 
 ![Screenshot_5](https://github.com/user-attachments/assets/68a11d64-edd8-4168-b6f7-d8a05bb8d6a6)
 ---
@@ -69,10 +73,11 @@ This Power BI report provides a detailed exploratory analysis of a global IT com
 - **Date Period Parameter**: Enables switching between Year, Quarter, and Month views.
 
 #### 📈 Insights:
-- Canada experienced a consistent increase in CTR 
+- Canada experienced a consistent increase in CTR, Japan and India experienced a drop.
 - Engagement peaked between 11 AM and 2 PM (local time).
 - Weekdays Friday in 14 & 18 hours yielded the highest engagement, while 19 hour yielded the lowest, other low engagement occurs on monday 14 hour, tuesday 14 hour.
-- Regions with low post volume often had erratic CTR trends — visualized using a **heat+bar matrix**.
+
+
 ![Screenshot_6](https://github.com/user-attachments/assets/4de59f54-0906-4407-aaed-1a07eba0dba5)
 ---
 
@@ -92,15 +97,19 @@ This Power BI report provides a detailed exploratory analysis of a global IT com
 - Medium engagement level contents outperformed high and low engagement levels in terms of engagement rate for content category.
 - Regions with consistent monthly growth (sparkline) showed strong hashtag loyalty and timing adherence.
 - Youtube had the highest live streams and video views, X.com had no live stream and linkedIn had the least video view
+
 ![Screenshot_7](https://github.com/user-attachments/assets/6a807041-3998-4df3-b332-54011f1e0d2e)
 ---
+INTERACT WITH REPORT HERE: [CLICK HERE](https://app.powerbi.com/view?r=eyJrIjoiNGQ3ZDI3ZTUtZTE0YS00Y2VmLThjM2EtOWJmMDYwZTliYzgwIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9)
 
+VIEW ON LINKEDIN : [CLICK HERE](https://www.linkedin.com/posts/emmanuel-idowu-analyst_datadna-builtwithzoomcharts-dataanalyst-activity-7343870697812733952-ogVX)
+---
 ## 📊 DAX Measures Used
 
 ```DAX
 -- Engagement Rate
 Engagement Rate = 
-DIVIDE(SUM('Data'[Engagement]), SUM('Data'[Impressions]))
+DIVIDE([Total Engagement] ,[Total Impression],0)
 
 -- Average CTR
 Average CTR = 
@@ -110,10 +119,22 @@ AVERAGE('Data'[Click_Through_Rate])
 Avg Engagement = 
 AVERAGE('Data'[Engagement])
 
--- Post Count
-Post Count = 
-COUNT('Data'[Post_ID])
+-- Total Clicks
+Total Clicks = SUM(Data[Clicks])
 
--- Sparkline Value (monthly aggregation)
-Monthly Engagement = 
-CALCULATE(SUM('Data'[Engagement]), DATESMTD('Data'[Post_Date]))
+-- Total Post
+Total Post = 
+DISTINCTCOUNT('Data'[Post_ID])
+
+--Total Engagement
+Total Engagement = SUM(Data[Engagement])
+
+--Total Impression
+Total Impression = SUM(Data[Impressions])
+
+--Total Live Streams
+Total Live Stream = SUM(Data[Live_Stream_Views])
+
+--Total Video Views
+Total Video Views = SUM(Data[Video_Views])
+
