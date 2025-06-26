@@ -1,6 +1,6 @@
 # 📊 Social Media Marketing Performance Analytics Report (2024)
 
-This Power BI report provides a detailed exploratory analysis of a global IT company's 2024 social media campaigns across TikTok, Instagram, LinkedIn, and X.com. The goal is to uncover what drives content success, identify regional engagement trends, and inform content/platform strategy decisions.
+This Power BI report provides a detailed exploratory analysis of a global IT company's 2024-2025 social media campaigns across TikTok, Instagram, YouTube, LinkedIn, Facebok and X.com. The goal is to uncover what drives content success, identify regional engagement trends, and inform content/platform strategy decisions.
 
 ---
 
@@ -100,9 +100,11 @@ This Power BI report provides a detailed exploratory analysis of a global IT com
 
 ![Screenshot_7](https://github.com/user-attachments/assets/6a807041-3998-4df3-b332-54011f1e0d2e)
 ---
-INTERACT WITH REPORT HERE: [CLICK HERE](https://app.powerbi.com/view?r=eyJrIjoiNGQ3ZDI3ZTUtZTE0YS00Y2VmLThjM2EtOWJmMDYwZTliYzgwIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9)
 
-VIEW ON LINKEDIN : [CLICK HERE](https://www.linkedin.com/posts/emmanuel-idowu-analyst_datadna-builtwithzoomcharts-dataanalyst-activity-7343870697812733952-ogVX)
+#### INTERACT WITH REPORT HERE: [CLICK HERE](https://app.powerbi.com/view?r=eyJrIjoiNGQ3ZDI3ZTUtZTE0YS00Y2VmLThjM2EtOWJmMDYwZTliYzgwIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9)
+
+#### VIEW ON LINKEDIN: [CLICK HERE](https://www.linkedin.com/posts/emmanuel-idowu-analyst_datadna-builtwithzoomcharts-dataanalyst-activity-7343870697812733952-ogVX)
+
 ---
 ## 📊 DAX Measures Used
 
