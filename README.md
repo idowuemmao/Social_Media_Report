@@ -106,6 +106,15 @@ This Power BI report provides a detailed exploratory analysis of a global IT com
 #### VIEW ON LINKEDIN: [CLICK HERE](https://www.linkedin.com/posts/emmanuel-idowu-analyst_datadna-builtwithzoomcharts-dataanalyst-activity-7343870697812733952-ogVX)
 
 ---
+## 📊 Create Date Calender 
+
+```DAX
+-- Engagement Rate
+Engagement Rate = 
+DIVIDE([Total Engagement] ,[Total Impression],0)
+```
+---
+
 ## 📊 DAX Measures Used
 
 ```DAX
